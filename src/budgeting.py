@@ -43,6 +43,8 @@ class BudgetingSoftware:
             amount (float): Amount of the bill.
             due_date (str): Due date in MM/DD format.
         """
+        #TODO: due_date string type and structure verification. normalize capitalization of all names. Make sure amount is in USD and follows
+        # "xx.xx" or "x.xx" where the structure represents a float 
         self.fixed_bills.append((name, amount, due_date))
 
     def set_discretionary_spending(self, category, priority):
@@ -102,6 +104,14 @@ class BudgetingSoftware:
             dict: Summary of income, fixed expenses, discretionary spending, savings, and credit card payments.
         """
         pass  # Implement summary generation
+    
+class MonthlyBudget:
+    
+    def __init__(self, month, liquid_funds, total_debt):
+        self.month = month
+        self.liquid_funds = liquid_funds
+        self.total_debt = total_debt
+        
 
 
 # Example Usage
